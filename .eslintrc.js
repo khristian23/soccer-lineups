@@ -27,7 +27,8 @@ module.exports = {
     // 'plugin:vue/vue3-strongly-recommended', // Priority B: Strongly Recommended (Improving Readability)
     // 'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
-    'standard'
+    'standard',
+    'plugin:quasar/standard'
 
   ],
 
@@ -35,6 +36,7 @@ module.exports = {
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
     // required to lint *.vue files
     'vue',
+    'quasar'
 
   ],
 
@@ -67,6 +69,14 @@ module.exports = {
 
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    // custom
+    'indent': ['error', 4],
+    'semi': 2,
+
+    // Quasar linting
+    'quasar/no-invalid-props': 'error',
+    'quasar/no-invalid-qfield-usage': 'error'
   }
 }
